@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 
 class Counter extends Component {
-  styles = {
-    fontSize: 25,
-    fontWeight: "bold",
-  };
+  componentDidUpdate(prevProps, prevState) {
+    console.log("prevProps", prevProps);
+    console.log("prevState", prevState);
+  }
+
+  componentWillUnmount() {
+    console.log("Counter - Unmount");
+  }
 
   render() {
-    console.log("props", this.props);
+    console.log("Counter - Rendered");
     return (
       <div>
         {this.props.children}
